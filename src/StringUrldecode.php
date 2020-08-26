@@ -8,9 +8,9 @@
  * @copyright Copyright (c) 2019 Akagibi
  */
 
-namespace akagibi\stringurldecode;
+namespace gluehq\texttools;
 
-use akagibi\stringurldecode\twigextensions\StringUrldecodeTwigExtension;
+use gluehq\texttools\twigextensions\StringUrldecodeTwigExtension;
 
 use Craft;
 use craft\base\Plugin;

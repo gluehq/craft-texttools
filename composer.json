@@ -28,7 +28,7 @@
     },
     "autoload": {
         "psr-4": {
-          "akagibi\\stringurldecode\\": "src/"
+          "gluehq\\texttools\\": "src/"
         }
     },
     "extra": {
@@ -37,6 +37,6 @@
         "hasCpSettings": false,
         "hasCpSection": false,
         "changelogUrl": "https://raw.githubusercontent.com/akagibi/stringurldecode/master/CHANGELOG.md",
-        "class": "akagibi\\stringurldecode\\StringUrldecode"
+        "class": "gluehq\\texttools\\StringUrldecode"
     }
 }
