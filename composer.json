@@ -33,10 +33,10 @@
     },
     "extra": {
         "name": "Text Tools",
-        "handle": "stringurldecode",
+        "handle": "texttools",
         "hasCpSettings": false,
         "hasCpSection": false,
         "changelogUrl": "https://raw.githubusercontent.com/akagibi/stringurldecode/master/CHANGELOG.md",
-        "class": "gluehq\\texttools\\StringUrldecode"
+        "class": "gluehq\\texttools\\TextTools"
     }
 }
