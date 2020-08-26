@@ -1,12 +1,4 @@
 <?php
-/**
- * String Urldecode plugin for Craft CMS 3.x
- *
- * Twig filters to urldecode a string.
- *
- * @link      https://www.akagibi.com
- * @copyright Copyright (c) 2019 Akagibi
- */
 
 namespace gluehq\texttools;
 
@@ -19,38 +11,12 @@ use craft\events\PluginEvent;
 
 use yii\base\Event;
 
-/**
- * Class StringUrldecode
- *
- * @author    Akagibi
- * @package   StringUrldecode
- * @since     1
- *
- */
-class TextTools extends Plugin
-{
-    // Static Properties
-    // =========================================================================
-
-    /**
-     * @var TextTools
-     */
+class TextTools extends Plugin {
+    
     public static $plugin;
-
-    // Public Properties
-    // =========================================================================
-
-    /**
-     * @var string
-     */
+    
     public $schemaVersion = '1';
-
-    // Public Methods
-    // =========================================================================
-
-    /**
-     * @inheritdoc
-     */
+    
     public function init()
     {
         parent::init();
@@ -76,8 +42,5 @@ class TextTools extends Plugin
             __METHOD__
         );
     }
-
-    // Protected Methods
-    // =========================================================================
 
 }

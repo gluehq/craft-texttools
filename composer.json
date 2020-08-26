@@ -1,26 +1,25 @@
 {
     "name": "gluehq/craft-texttools",
-    "description": "Fixes orphans and removes redundant tags.",
+    "description": "Reunites orphans and removes redundant tags.",
     "type": "craft-plugin",
     "version": "1.0.0",
     "keywords": [
-        "craft",
-        "cms",
-        "craftcms",
-        "craft-plugin",
-        "string urldecode",
-        "urldecode",
-        "php"
+        "filter",
+        "text editor",
+        "wysiwyg",
+        "redactor",
+        "redundant tags",
+        "oprhans"
     ],
     "support": {
-        "docs": "https://github.com/akagibi/stringurldecode/blob/master/README.md",
-        "issues": "https://github.com/akagibi/stringurldecode/issues"
+        "docs": "https://github.com/gluehq/craft-texttools/blob/master/README.md",
+        "issues": "https://github.com/gluehq/craft-texttools/issues"
     },
     "license": "MIT",
     "authors": [
         {
-            "name": "Akagibi",
-            "homepage": "https://www.akagibi.com"
+            "name": "Tim Archer",
+            "homepage": "https://www.glue.co.nz"
         }
     ],
     "require": {
@@ -36,7 +35,7 @@
         "handle": "texttools",
         "hasCpSettings": false,
         "hasCpSection": false,
-        "changelogUrl": "https://raw.githubusercontent.com/akagibi/stringurldecode/master/CHANGELOG.md",
+        "changelogUrl": "https://raw.githubusercontent.com/gluehq/craft-texttools/master/CHANGELOG.md",
         "class": "gluehq\\texttools\\TextTools"
     }
 }
