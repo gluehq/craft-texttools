@@ -26,12 +26,12 @@ class TextToolsTwigExtension extends \Twig_Extension {
         ];
     }
 
-    public function texttools($tag) {
+    public function texttools($tag, $argument = false) {
         
         // NB the incoming data has not been converted to html entities
         
         // Clean up HTML and Purify HTML are deactivated on field
-        
+            
         // Replace consecutive br tags with just one
         $tag = preg_replace('/(?:<br\s*\/*>)+/', '<br>', $tag);
         
@@ -43,9 +43,21 @@ class TextToolsTwigExtension extends \Twig_Extension {
         
         // Remove any space before closing block tag
         $tag = preg_replace('/(\s+)<\/(p|h[1-6]|blockquote|li)>/', '</$2>', $tag);
-        
+            
         // Add a non-breaking space (requires space before closing tag to be removed first)
-        $tag = preg_replace('/\s+([^>\s]+)<\/(p|h[1-6]|blockquote|li)>/', '&#160;$1</$2>', $tag);
+        $tag = preg_replace('/\s+([^>\s]+)<\/(p|a|h[1-6]|blockquote|li)>/', '&#160;$1</$2>', $tag);
+
+        if ($argument == 'strip_p_tags') {
+            $tag = preg_replace('/<\/?p>/', '', $tag);
+        }
+
+        // Non-breaking phrases
+        $phrases = ['Spinnaker Capital', 'New Zealand'];
+
+        foreach ($phrases as $phrase) {
+            $sub = preg_replace('/\s+/', '&#160;', $phrase);
+            $tag = preg_replace('/' . $phrase . '/', $sub, $tag);
+        }
 
         // Done
         echo $tag;// Use echo not return to output rendered html
