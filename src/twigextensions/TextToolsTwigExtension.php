@@ -51,14 +51,6 @@ class TextToolsTwigExtension extends \Twig_Extension {
             $tag = preg_replace('/<\/?p>/', '', $tag);
         }
 
-        // Non-breaking phrases
-        $phrases = ['Spinnaker Capital', 'New Zealand'];
-
-        foreach ($phrases as $phrase) {
-            $sub = preg_replace('/\s+/', '&#160;', $phrase);
-            $tag = preg_replace('/' . $phrase . '/', $sub, $tag);
-        }
-
         // Done
         echo $tag;// Use echo not return to output rendered html
         
