@@ -29,8 +29,6 @@ class TextToolsTwigExtension extends \Twig_Extension {
     public function texttools($tag, $argument = false) {
         
         // NB the incoming data has not been converted to html entities
-        
-        // Clean up HTML and Purify HTML are deactivated on field
             
         // Replace consecutive br tags with just one
         $tag = preg_replace('/(?:<br\s*\/*>)+/', '<br>', $tag);
@@ -45,8 +43,12 @@ class TextToolsTwigExtension extends \Twig_Extension {
         $tag = preg_replace('/(\s+)<\/(p|h[1-6]|blockquote|li)>/', '</$2>', $tag);
             
         // Add a non-breaking space (requires space before closing tag to be removed first)
-        $tag = preg_replace('/\s+([^>\s]+)<\/(p|a|h[1-6]|blockquote|li)>/', '&#160;$1</$2>', $tag);
+        // No longer a default method because a non-breaking space can be a bad idea for certain combinations of short headlines, long words, large fonts, small containers or small viewports
+        if ($argument == 'fix_orphans') {
+            $tag = preg_replace('/\s+([^>\s]+)<\/(p|a|h[1-6]|blockquote|li)>/', '&#160;$1</$2>', $tag);
+        }
 
+        // Left in for legacy support because you should use Twig's {{ entry.text|striptags('<a><strong><em>')|raw }} (stating preserved tags) instead
         if ($argument == 'strip_p_tags') {
             $tag = preg_replace('/<\/?p>/', '', $tag);
         }

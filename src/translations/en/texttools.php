@@ -1,16 +1,16 @@
 <?php
 /**
- * String Urldecode plugin for Craft CMS 3.x
+ * Text Tools plugin for Craft CMS 3.x
  *
- * Twig filters to urldecode a string.
+ * Removes redundant tags from text editor ouput.
  *
- * @link      https://www.akagibi.com
- * @copyright Copyright (c) 2019 Akagibi
+ * @link      https://www.glue.co.nz
+ * @copyright ©2022 Glue Design Limited
  */
 
 /**
- * @author    Akagibi
- * @package   StringUrldecode
+ * @author    Tim Archer
+ * @package   Text Tools
  * @since     1
  */
 return [
