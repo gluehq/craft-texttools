@@ -2,7 +2,7 @@
     "name": "gluehq/craft-texttools",
     "description": "Reunites orphans and removes redundant tags.",
     "type": "craft-plugin",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "keywords": [
         "filter",
         "text editor",
