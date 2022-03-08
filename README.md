@@ -30,7 +30,7 @@ Adding a non-breaking space between the last two words to fix typesetting orphan
 {% endfilter %}
 ```
 
-Similarly there was originally an argument for stripping `p` tags, but this was already catered for in craft using the Twig filter `striptags` and declaring any tags you want to preserve, eg: `{{ entry.text|striptags('<a><strong><em>')|raw }}`. You can still call this method by passing this argument:
+Similarly there was originally an argument for stripping `p` tags, but this was already catered for in Craft using the Twig filter `striptags` and declaring any tags you want to preserve, eg: `{{ entry.text|striptags('<a><strong><em>')|raw }}`. You can still call this method by passing this argument:
 
 ```
 {% filter texttools('strip_p_tags') %}
