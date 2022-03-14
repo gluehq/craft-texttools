@@ -26,7 +26,7 @@ Adding a non-breaking space between the last two words to fix typesetting orphan
 
 ```
 {% filter texttools('fix_orphans') %}
-	{{ entry.textField }}
+    {{ entry.textField }}
 {% endfilter %}
 ```
 
@@ -34,6 +34,6 @@ Similarly there was originally an argument for stripping `p` tags, but this was 
 
 ```
 {% filter texttools('strip_p_tags') %}
-	{{ entry.textField }}
+    {{ entry.textField }}
 {% endfilter %}
 ```

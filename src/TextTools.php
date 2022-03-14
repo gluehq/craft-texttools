@@ -15,7 +15,7 @@ class TextTools extends Plugin {
     
     public static $plugin;
     
-    public $schemaVersion = '1.0.1';
+    public $schemaVersion = '1.0.3';
     
     public function init()
     {
