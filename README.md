@@ -4,6 +4,7 @@ Removes redundant tags from text editor output, namely:
 - Removes any `<br>` tags before the closing tag
 - Removes empty `<p>` tags
 - Removes any white space before the closing tag
+- Inserts a non-breaking space `&nbsp;` between the last two words of any `h4`, `h5`, `h6`, `p`, `blockquote` and `li` to fix any orphans, being single words on the last line
 
 
 
@@ -22,15 +23,7 @@ Removes redundant tags from text editor output, namely:
 
 #### Changes
 
-Adding a non-breaking space between the last two words to fix typesetting orphans (ie a lone word on the last line) is no longer a default operation. This is because it can be a bad idea for certain combinations of short headlines, long words, large fonts, small containers or small viewports. It's better done with JavaScript to negotiate the responsive aspects, but you can still call this method by passing a specific argument:
-
-```
-{% filter texttools('fix_orphans') %}
-    {{ entry.textField }}
-{% endfilter %}
-```
-
-Similarly there was originally an argument for stripping `p` tags, but this was already catered for in Craft using the Twig filter `striptags` and declaring any tags you want to preserve, eg: `{{ entry.text|striptags('<a><strong><em>')|raw }}`. For legacy support reasons you can still call this method in the plugin by passing this argument:
+There was originally an argument for stripping `p` tags, but this was already catered for in Craft using the Twig filter `striptags` and declaring any tags you want to preserve, eg: `{{ entry.text|striptags('<a><strong><em>')|raw }}`. For legacy support reasons you can still call this method in the plugin by passing this argument:
 
 ```
 {% filter texttools('strip_p_tags') %}
