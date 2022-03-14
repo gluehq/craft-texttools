@@ -2,7 +2,7 @@
     "name": "gluehq/craft-texttools",
     "description": "Removes redundant tags from text editor output.",
     "type": "craft-plugin",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "keywords": [
         "filter",
         "text editor",
