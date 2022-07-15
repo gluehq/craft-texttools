@@ -36,8 +36,8 @@ class TextToolsTwigExtension extends \Twig_Extension {
         // Remove any br tags before closing block tag
         $tag = preg_replace('/<br\s*\/*>(<\/(?:p|h[1-6]|a|blockquote|li)>)/', '$1', $tag);
         
-        // Remove empty p tags
-        $tag = preg_replace('/<p[^>]*>\s*<\/p>/', '', $tag);
+        // Remove empty text tags
+        $tag = preg_replace('/<(p|h[1-6]|blockquote|li)[^>]*>\s*<\/(p|h[1-6]|blockquote|li)>/', '', $tag);
         
         // Remove any space before closing block tag
         $tag = preg_replace('/(\s+)<\/(p|h[1-6]|a|blockquote|li)>/', '</$2>', $tag);
