@@ -2,9 +2,9 @@ Removes redundant tags from text editor output, namely:
 
 - Replaces consecutive `<br>` tags with just one
 - Removes any `<br>` tags before the closing tag
-- Removes empty `<p>` tags
+- Removes empty `p`, `h3`, `h4`, `h5`, `h6`, `a`, `li` and `blockquote` tags
 - Removes any white space before the closing tag
-- Inserts a non-breaking space `&nbsp;` between the last two words of any `p`, `h3`, `h4`, `h5`, `h6`, `a`, `blockquote` and `li` to fix any orphans, being single words on the last line
+- Inserts a non-breaking space `&nbsp;` between the last two words of any `p`, `h3`, `h4`, `h5`, `h6`, `a`, `li` and `blockquote` to fix any orphans, being single words on the last line
 
 
 
