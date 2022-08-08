@@ -15,14 +15,16 @@ class TextTools extends Plugin {
     
     public static $plugin;
     
-    public $schemaVersion = '1.0.8';
+    public string $schemaVersion = '1.1.0';
     
     public function init()
     {
         parent::init();
         self::$plugin = $this;
 
-        Craft::$app->view->registerTwigExtension(new TextToolsTwigExtension());
+        if (Craft::$app->request->getIsSiteRequest()) {
+            Craft::$app->view->registerTwigExtension(new TextToolsTwigExtension());
+        }
 
         Event::on(
             Plugins::class,

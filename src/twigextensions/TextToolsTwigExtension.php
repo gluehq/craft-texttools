@@ -5,7 +5,7 @@ namespace gluehq\texttools\twigextensions;
 use gluehq\texttools\TextTools;
 use Craft;
 
-class TextToolsTwigExtension extends \Twig_Extension {
+class TextToolsTwigExtension extends \Twig\Extension\AbstractExtension {
     
     public function getName()
     {
@@ -15,14 +15,14 @@ class TextToolsTwigExtension extends \Twig_Extension {
     public function getFilters()
     {
         return [
-            new \Twig_SimpleFilter('texttools', [$this, 'texttools']),
+            new \Twig\TwigFilter('texttools', [$this, 'texttools']),
         ];
     }
 
     public function getFunctions()
     {
         return [
-            new \Twig_SimpleFunction('texttools', [$this, 'texttools']),
+            new \Twig\TwigFunction('texttools', [$this, 'texttools']),
         ];
     }
 
