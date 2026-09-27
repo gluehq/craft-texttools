@@ -33,14 +33,12 @@ class TextToolsTwigExtension extends \Twig\Extension\AbstractExtension {
         // Replace consecutive br tags with just one
         $tag = preg_replace('/(?:<br\s*\/*>)+/', '<br>', $tag);
         
-        // Remove any br tags before closing block tag
-        $tag = preg_replace('/<br\s*\/*>(<\/(?:p|h[1-6]|a|blockquote|li)>)/', '$1', $tag);
+        // Remove any mix of br tags, spaces and non-breaking spaces before closing block tag
+        // Non-breaking spaces arrive as the raw character or as an entity; \s covers neither, hence the explicit list
+        $tag = preg_replace('/(?:<br\s*\/*>|\s|\x{A0}|&nbsp;|&#160;)+(<\/(?:p|h[1-6]|a|blockquote|li)>)/u', '$1', $tag);
         
-        // Remove empty text tags
+        // Remove empty text tags, including those holding only the spacing just stripped
         $tag = preg_replace('/<(p|h[1-6]|a|li|blockquote)[^>]*>\s*<\/(p|h[1-6]|a|li|blockquote)>/', '', $tag);
-        
-        // Remove any space before closing block tag
-        $tag = preg_replace('/(\s+)<\/(p|h[1-6]|a|li|blockquote)>/', '</$2>', $tag);
             
         // Add a non-breaking space (requires space before closing tag to be removed first)
         $tag = preg_replace('/\s+([^>\s]+)<\/(p|h[3-6]|a|li|blockquote)>/', '&#160;$1</$2>', $tag);
