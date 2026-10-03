@@ -30,6 +30,9 @@ class TextToolsTwigExtension extends \Twig\Extension\AbstractExtension {
         
         // NB the incoming data has not been converted to html entities
             
+        // Two or more br tags in a paragraph, with any spaces or non-breaking spaces between, are a paragraph break typed the old way
+        $tag = preg_replace('/(?:\s|&nbsp;|&#160;|\x{A0})*(?:<br\s*\/*>(?:\s|&nbsp;|&#160;|\x{A0})*){2,}/u', '</p><p>', $tag);
+
         // Replace consecutive br tags with just one
         $tag = preg_replace('/(?:<br\s*\/*>)+/', '<br>', $tag);
         
